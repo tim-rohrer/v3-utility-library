@@ -22,6 +22,7 @@ import { Marker } from "./marker";
 import { MVCObject } from "./mvcobject";
 import { Point } from "./point";
 import { Size } from "./size";
+import { DirectionsService } from "./directionsService";
 
 const initialize = function(): void {
   (global as any).google = {
@@ -43,7 +44,8 @@ const initialize = function(): void {
         clearListeners: jest.fn(),
         removeListener: jest.fn(),
         trigger: jest.fn()
-      }
+      },
+      DirectionsService: DirectionsService
     }
   };
 };
@@ -51,6 +53,7 @@ const initialize = function(): void {
 export {
   Marker,
   Map_ as Map,
+  DirectionsService,
   Size,
   MVCObject,
   LatLng,
